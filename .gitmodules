@@ -1,0 +1,3 @@
+[submodule "pdclasses"]
+	path = pdclasses
+	url = https://github.com/thasric/pdclasses.git
