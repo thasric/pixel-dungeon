@@ -23,6 +23,7 @@ public class Statistics {
 	
 	public static int goldCollected;
 	public static int deepestFloor;
+	public static int highestFloor;
 	public static int enemiesSlain;
 	public static int foodEaten;
 	public static int potionsCooked;
@@ -41,6 +42,7 @@ public class Statistics {
 		
 		goldCollected	= 0;
 		deepestFloor	= 0;
+		highestFloor	= 1;
 		enemiesSlain	= 0;
 		foodEaten		= 0;
 		potionsCooked	= 0;
@@ -58,6 +60,7 @@ public class Statistics {
 	
 	private static final String GOLD		= "score";
 	private static final String DEEPEST		= "maxDepth";
+	private static final String HIGHEST		= "minDepth";
 	private static final String SLAIN		= "enemiesSlain";
 	private static final String FOOD		= "foodEaten";
 	private static final String ALCHEMY		= "potionsCooked";
@@ -70,6 +73,7 @@ public class Statistics {
 	public static void storeInBundle( Bundle bundle ) {
 		bundle.put( GOLD,		goldCollected );
 		bundle.put( DEEPEST,	deepestFloor );
+		bundle.put( HIGHEST,	highestFloor );
 		bundle.put( SLAIN,		enemiesSlain );
 		bundle.put( FOOD,		foodEaten );
 		bundle.put( ALCHEMY,	potionsCooked );
@@ -83,6 +87,7 @@ public class Statistics {
 	public static void restoreFromBundle( Bundle bundle ) {
 		goldCollected	= bundle.getInt( GOLD );
 		deepestFloor	= bundle.getInt( DEEPEST );
+		highestFloor	= bundle.getInt( HIGHEST );
 		enemiesSlain	= bundle.getInt( SLAIN );
 		foodEaten		= bundle.getInt( FOOD );
 		potionsCooked	= bundle.getInt( ALCHEMY );

@@ -58,6 +58,7 @@ import com.watabou.pixeldungeon.levels.PrisonLevel;
 import com.watabou.pixeldungeon.levels.Room;
 import com.watabou.pixeldungeon.levels.SewerBossLevel;
 import com.watabou.pixeldungeon.levels.SewerLevel;
+import com.watabou.pixeldungeon.levels.TestLevel;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.scenes.StartScene;
 import com.watabou.pixeldungeon.ui.QuickSlot;
@@ -166,6 +167,9 @@ public class Dungeon {
 		
 		Level level;
 		switch (depth) {
+		case 0:
+			level = new TestLevel();
+			break;
 		case 1:
 		case 2:
 		case 3:

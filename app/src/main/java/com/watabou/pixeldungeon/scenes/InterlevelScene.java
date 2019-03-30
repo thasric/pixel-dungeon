@@ -245,10 +245,16 @@ public class InterlevelScene extends PixelScene {
 	
 	private void ascend() throws Exception {
 		Actor.fixTime();
-		
+
 		Dungeon.saveLevel();
-		Dungeon.depth--;
-		Level level = Dungeon.loadLevel( Dungeon.hero.heroClass );
+		Level level;
+		if(Dungeon.depth <= Statistics.highestFloor) {
+			Dungeon.depth -= 2; // -2 to offset addition in newLevel().
+			level = Dungeon.newLevel();
+		} else {
+			Dungeon.depth--;
+			level = Dungeon.loadLevel( Dungeon.hero.heroClass );
+		}
 		Dungeon.switchLevel( level, level.exit );
 	}
 	
